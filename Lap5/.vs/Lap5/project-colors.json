@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "d61a4900-0da9-4ab2-ad4a-b51aa6cef5aa": {
+      "ProjectGuid": "d61a4900-0da9-4ab2-ad4a-b51aa6cef5aa",
+      "DisplayName": "Lap5",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}

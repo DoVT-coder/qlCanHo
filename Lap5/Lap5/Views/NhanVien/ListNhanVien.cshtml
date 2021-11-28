@@ -1,0 +1,11 @@
+﻿@model List<Lap5.Models.NhanVienModel>
+<form action="/NhanVien/ListNhanVienSua/" method = "POST">
+    <select name="MaNV" id="MaNV">
+        @foreach (var item in Model)
+        {
+            <option value="@item.MaNV">@item.TenNV</option>
+        }
+    </select>
+    <br>
+    <input type="submit" value="Liệt Kê" name="submit" id="Liet ke" />
+</form>

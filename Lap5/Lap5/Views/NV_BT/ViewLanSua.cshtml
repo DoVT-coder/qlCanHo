@@ -1,0 +1,17 @@
+﻿@model object
+@{
+    ViewData["Title"] = "Chi tiết thiết bị được nhân viên sửa:";
+}
+
+<form action="/NV_BT/UpdateSuaChua" method="post">
+    <label for="MaTB">Mã Thiết Bị: </label><input type="text" name="MaTB" value="@Model.GetType().GetProperty("MaTB").GetValue(Model, null)"
+/><br>
+ <label for="MaCH">Mã Căn Hộ: </label><input type="text" name="MaCH" value="@Model.GetType().GetProperty("MaCH").GetValue(Model, null)"
+/><br>
+<label for="LanThu">Lần sửa: </label><input type="text" name="LanThu" value="@Model.GetType().GetProperty("LanThu").GetValue(Model, null)"
+/><br>
+<label for="NgayBT">Ngày Sửa: </label><input type="text" name="NgayBT" value="@Model.GetType().GetProperty("NgayBT").GetValue(Model, null)"
+/>
+<br>
+    <input type="submit" name="submit" value="Update" id="them" />
+</form>
