@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aK/NIosztql/3vsZVnhc+760DJHSYzS2AaujcV7/CzEtPaWlQu8ks3/Bgi9K5b3APf2K+NAFVMfRg7czdsKqMQ==",
+  "dgSpecHash": "hFmtWkif4UUaPKUA8snMWjZz7maTPhhtRA9Sr5ttqLkl8DRupsFpIQ3V1bWOvFR/lPSJJZdYFCXnCpzaaPIuCg==",
   "success": true,
-  "projectFilePath": "D:\\Desktop_2021_2022\\HK1\\Xây dựng HTTT trên các framework - IS220.M11\\Thuc_Hanh\\Lap5\\Lap5\\Lap5\\Lap5.csproj",
+  "projectFilePath": "D:\\FAME\\Thi\\qlch\\qlCanHo\\Lap5\\Lap5\\Lap5.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\votha\\.nuget\\packages\\azure.core\\1.6.0\\azure.core.1.6.0.nupkg.sha512",
     "C:\\Users\\votha\\.nuget\\packages\\azure.identity\\1.3.0\\azure.identity.1.3.0.nupkg.sha512",

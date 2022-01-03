@@ -8,7 +8,6 @@ namespace Lap5.Models
     {
         public int MaCH { get; set; }
         public string TenCH { get; set; }
-        public ICollection<NV_BTModel> NVBTs { get; set; }
 
     }
 }

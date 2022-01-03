@@ -15,7 +15,7 @@ namespace Lap5.Models
         {
             return new SqlConnection(ConnectionString);
         }
-        public int sqlInsertCanHo(CanHoModel canho)
+        public void sqlInsertCanHo(CanHoModel canho)
         {
             using (SqlConnection conn = GetConnection())
             {
@@ -24,10 +24,10 @@ namespace Lap5.Models
                 SqlCommand cmd = new SqlCommand(str, conn);
                 cmd.Parameters.AddWithValue("MaCH", canho.MaCH);
                 cmd.Parameters.AddWithValue("TenCH", canho.TenCH);
-                return cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
             }
         }
-        public int sqlUpdateSuaChua(int MaTB, int MaCH, int LanThu, string NgayBT, NV_BTModel b)
+        public void sqlUpdateSuaChua(int MaNV, int MaTBC, int MaCHC, int LanThuC, int MaTB, int MaCH, int LanThu, string NgayBT)
         {
             using (SqlConnection conn = GetConnection())
             {
@@ -40,15 +40,14 @@ namespace Lap5.Models
                 cmd.Parameters.AddWithValue("MaCH", MaCH);
                 cmd.Parameters.AddWithValue("LanThu", LanThu);
                 cmd.Parameters.AddWithValue("NgayBT", NgayBT);
-                
-                cmd.Parameters.AddWithValue("manv1", b.MaNV);
-                cmd.Parameters.AddWithValue("matb1", b.MaTB);
-                cmd.Parameters.AddWithValue("mach1", b.MaCH);
-                cmd.Parameters.AddWithValue("lanthu1", b.LanThu);
-                return cmd.ExecuteNonQuery();
+                cmd.Parameters.AddWithValue("manv1", MaNV);
+                cmd.Parameters.AddWithValue("matb1", MaTBC);
+                cmd.Parameters.AddWithValue("mach1", MaCHC);
+                cmd.Parameters.AddWithValue("lanthu1", LanThuC);
+                cmd.ExecuteNonQuery();
             }
         }
-        public int sqlXoaLanSua(int MaNV, int MaTB, int MaCH, int LanThu)
+        public void sqlXoaLanSua(int MaNV, int MaTB, int MaCH, int LanThu)
         {
             using (SqlConnection conn = GetConnection())
             {
@@ -61,12 +60,12 @@ namespace Lap5.Models
                 cmd.Parameters.AddWithValue("MaTB", MaTB);
                 cmd.Parameters.AddWithValue("MaCH", MaCH);
                 cmd.Parameters.AddWithValue("LanThu", LanThu);
-                return cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
             }
         }
-        public List<object> sqlListByTimeNhanVien(int SoLan)
+        public List<NhanVienLietKeModel> sqlListByTimeNhanVien(int SoLan)
         {
-            List<object> list = new List<object>();
+            List<NhanVienLietKeModel> list = new List<NhanVienLietKeModel>();
             using (SqlConnection conn = GetConnection())
             {
                 conn.Open();
@@ -80,11 +79,11 @@ namespace Lap5.Models
                 {
                     while (reader.Read())
                     {
-                        list.Add(new
+                        list.Add(new NhanVienLietKeModel()
                         {
-                            MaNV = reader["MaNV"].ToString(),
+                            TenNV = reader["MaNV"].ToString(),
                             SoDT = reader["SoDT"].ToString(),
-                            SoLan = Convert.ToInt32(reader["SoLan"])
+                            SoLanSua = Convert.ToInt32(reader["SoLan"])
                         });
                     }
                     reader.Close();
@@ -93,9 +92,9 @@ namespace Lap5.Models
             }
             return list;
         }
-        public List<object> sqlLietKet(int MaNV)
+        public List<NV_BTModel> sqlLietKet(int MaNV)
         {
-            List<object> list = new List<object>();
+            List<NV_BTModel> list = new List<NV_BTModel>();
             using (SqlConnection conn = GetConnection())
             {
                 conn.Open();
@@ -108,13 +107,13 @@ namespace Lap5.Models
                 {
                     while(reader.Read())
                     {
-                        list.Add(new
+                        list.Add(new NV_BTModel()
                         {
-                            MaNV = reader["MaNV"],
-                            MaTB = reader["MaTB"],
-                            MaCH = reader["MaCH"],
-                            LanThu = reader["LanThu"],
-                            NgayBT = reader["NgayBT"].ToString()
+                            MaNV = Convert.ToInt32(reader["MaNV"]),
+                            MaTB = Convert.ToInt32(reader["MaTB"]),
+                            MaCH = Convert.ToInt32(reader["MaCH"]),
+                            LanThu = Convert.ToInt32(reader["LanThu"]),
+                            NgayBT = Convert.ToDateTime(reader["NgayBT"])
                         });
                     }
                     reader.Close();

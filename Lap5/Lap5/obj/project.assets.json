@@ -2897,11 +2897,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Desktop_2021_2022\\HK1\\Xây dựng HTTT trên các framework - IS220.M11\\Thuc_Hanh\\Lap5\\Lap5\\Lap5\\Lap5.csproj",
+      "projectUniqueName": "D:\\FAME\\Thi\\qlch\\qlCanHo\\Lap5\\Lap5\\Lap5.csproj",
       "projectName": "Lap5",
-      "projectPath": "D:\\Desktop_2021_2022\\HK1\\Xây dựng HTTT trên các framework - IS220.M11\\Thuc_Hanh\\Lap5\\Lap5\\Lap5\\Lap5.csproj",
+      "projectPath": "D:\\FAME\\Thi\\qlch\\qlCanHo\\Lap5\\Lap5\\Lap5.csproj",
       "packagesPath": "C:\\Users\\votha\\.nuget\\packages\\",
-      "outputPath": "D:\\Desktop_2021_2022\\HK1\\Xây dựng HTTT trên các framework - IS220.M11\\Thuc_Hanh\\Lap5\\Lap5\\Lap5\\obj\\",
+      "outputPath": "D:\\FAME\\Thi\\qlch\\qlCanHo\\Lap5\\Lap5\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\votha\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -18,18 +18,17 @@ namespace Lap5.Controllers
             DataContext context = HttpContext.RequestServices.GetService(typeof(Lap5.Models.DataContext)) as DataContext;
             return View(context.sqlListNhanVien());
         }
-        [HttpPost]
+
         public IActionResult ListNhanVienSua(int MaNV)
         {
             DataContext context = HttpContext.RequestServices.GetService(typeof(Lap5.Models.DataContext)) as DataContext;
             return View(context.sqlLietKet(MaNV));
         }
-        public IActionResult ListNhanVienSua(int MaNV, int MaTB, int MaCH, int LanThu)
+        public IActionResult XoaLanSua(int MaNV, int MaTB, int MaCH, int LanThu)
         {
-            int count;
             DataContext context = HttpContext.RequestServices.GetService(typeof(Lap5.Models.DataContext)) as DataContext;
-            count = context.sqlXoaLanSua(MaNV, MaTB, MaCH, LanThu);
-            return View(context.sqlLietKet(MaNV));
+            context.sqlXoaLanSua(MaNV, MaTB, MaCH, LanThu);
+            return new RedirectResult(url: "/NhanVien/ListNhanVienSua?MaNV=" + MaNV, permanent: true, preserveMethod: true);
         }
     }
     

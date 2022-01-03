@@ -14,15 +14,12 @@ namespace Lap5.Controllers
         {
             return View();
         }
-        [HttpPost]
-        public String AddCH(CanHoModel canho)
+
+        public IActionResult AddCH(CanHoModel canho)
         {
-            int count;
             DataContext context = HttpContext.RequestServices.GetService(typeof(Lap5.Models.DataContext)) as DataContext;
-            count = context.sqlInsertCanHo(canho);
-            if (count == 1)
-                return "Thêm Thành Công";
-            return "Thêm Thất Bại";
+            context.sqlInsertCanHo(canho);
+            return new RedirectResult(url: "/CanHo/ThemCanHo", permanent: true, preserveMethod: true);
         }
     }
 }

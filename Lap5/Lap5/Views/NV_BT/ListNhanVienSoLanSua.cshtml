@@ -1,7 +1,8 @@
-﻿@model List<object>
+﻿@model List<NhanVienLietKeModel>
 @{
     ViewData["Title"] = "Liệt số số lần sửa theo từng nhân viên";
 }
+
 <table border="1">
     <tr>
         <th>Tên Nhân Viên</th>
@@ -13,13 +14,13 @@
     {
     <tr>
         <td>
-            @item.GetType().GetProperty("MaNV").GetValue(item, null)
+            @item.TenNV
         </td>
         <td>
-            @item.GetType().GetProperty("SoDT").GetValue(item, null)
+            @item.SoDT
         </td>
          <td>
-            @item.GetType().GetProperty("SoLan").GetValue(item, null)
+            @item.SoLanSua
         </td>
     </tr>
     }

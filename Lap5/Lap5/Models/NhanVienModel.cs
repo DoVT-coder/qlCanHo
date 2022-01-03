@@ -10,6 +10,6 @@ namespace Lap5.Models
         public string TenNV { get; set; }
         public string SoDT { get; set; }
         public string GioiTinh { get; set; }
-        public ICollection<NV_BTModel> NVBTs { get; set; }
+       
     }
 }
